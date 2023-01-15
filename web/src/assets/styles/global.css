@@ -35,10 +35,6 @@ body{
     background-color: var(--color-background);
 }
 
-body, input, textarea{
+body, input, textarea, button{
     font-family: 'Montserrat Alternates', sans-serif;
-}
-
-button{
-    font-family: 'Quesat Demo', sans-serif;
 }
