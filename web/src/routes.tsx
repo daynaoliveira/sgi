@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './views/Login';
 import Landing from './views/Landing';
-import RetrievePassword from './views/Retrieve_password';
+import RetrievePassword from './views/RetrievePassword';
 
 function Rotas(){
     return (
