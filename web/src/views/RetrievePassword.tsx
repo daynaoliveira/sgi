@@ -20,7 +20,6 @@ function RetrievePassword() {
                         </span>
                         <input type="email" name="email" placeholder='example@mail.com' />
                     </div>
-                    <Link to='/login' className="redir" id="retrieve-password">Voltar</Link>
                     <div className="button-field">
                         <button type="submit" className='button-login'>
                             <span className='button-icon'>
@@ -29,6 +28,7 @@ function RetrievePassword() {
                             <span className='button-text'>Enviar</span>
                         </button>
                     </div>
+                    <Link to='/login' className="redir" id="retrieve-password">Voltar</Link>
                 </form>
             </div>
         </div>
