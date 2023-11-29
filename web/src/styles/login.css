@@ -1,21 +1,8 @@
-/*
-.input-block:focus-within::after {
-  width: calc(100% - 3.2rem);
-  height: 2px;
-  content: '';
-  background: var(--color-primary-light);
-  position: absolute;
-  left: 1.6rem;
-  right: 1.6rem;
-  bottom: 0;
-}
-*/
-
 html {
     height: 100vh;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -23,7 +10,7 @@ html {
     padding-bottom: 2.5rem;
 }
 
-.container::before{
+.container::before {
     content: '';
     position: absolute;
     width: 1500px;
@@ -35,13 +22,14 @@ html {
     bottom: 65%;
 }
 
-.form-container{
+.form-container {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    user-select: none;
 }
 
-form{
+form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,21 +38,21 @@ form{
     overflow: hidden;
 }
 
-.title{
+.title {
     font-size: 3.5rem;
     color: var(--color-title-in-primary);
     margin-bottom: 1rem;
     text-align: center;
 }
 
-.subtitle{
+.subtitle {
     font-size: 2rem;
     color: var(--color-title-in-primary);
     margin-bottom: 1rem;
     text-align: center;
 }
 
-.input-field{
+.input-field {
     width: 100%;
     height: 100px;
     background: var(--color-input-background);
@@ -75,14 +63,14 @@ form{
     padding: 0 .5rem;
 }
 
-.input-field i{
+.input-icon {
     text-align: center;
-    line-height: 100px;
+    padding-top: 2.3rem;
     color: var(--color-i-primary);
-    font-size: 2.5rem;
+    font-size: 1.8rem;
 }
 
-.input-field input{
+.input-field input {
     background: none;
     outline: none;
     border: none;
@@ -92,19 +80,19 @@ form{
     color: var(--color-input-primary);
 }
 
-.input-field input::placeholder{
+.input-field input::placeholder {
     color: #aaa;
     font-weight: 500;
 }
 
-.redir{
+.redir {
     text-decoration: none;
     color: var(--color-input-primary);
     margin: 3rem;
     font-size: 1.5rem;
 }
 
-.btn-login{
+.button-login {
     color: #f7f5ee;
     display: flex;
     padding: 0;
@@ -123,58 +111,60 @@ form{
     font-weight: 700;
 }
 
-button:hover{
+button:hover {
     background: #8acfd3;
     color: var(--color-input-primary);
     transform: scale(.90);
-    transition: .8s;
+    transition: 1s;
 
 }
 
-.button-icon{
+.button-icon {
     margin-right: 1rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    padding-top: .5rem;
 }
 
-.panel-container{
+.panel-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     text-align: center;
     padding: 2.5rem;
+    user-select: none;
 }
 
-.panel-container .content{
+.panel-container .content {
     padding-top: 0.5rem;
     transform: translateX(0px);
     color: #fff;
 }
 
-.panel-container h3{
+.panel-container h3 {
     font-weight: 600;
     line-height: 1;
     font-size: 3.8rem;
 }
 
-.panel-container p{
+.panel-container p {
     font-size: 1.5rem;
     padding: 1rem 0;
 }
 
-.image{
+.image {
     width: 600px;
     padding-bottom: 5rem;
 }
 
 @media (min-width: 1024px) {
-    html {   
+    html {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    
-    .container{
+
+    .container {
         width: fit-content;
         flex-direction: row;
         margin-right: auto;
@@ -184,64 +174,65 @@ button:hover{
         padding-bottom: 0;
     }
 
-    .container::before{
+    .container::before {
         transform: translateY(15%) translateX(-75%);
     }
-    
-    .form-container{
+
+    .form-container {
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
-    
-    .title{
+
+    .title {
         font-size: 2.2rem;
     }
 
-    .subtitle{
+    .subtitle {
         font-size: 1.2rem;
     }
 
-    .input-field{
+    .input-field {
         max-width: 380px;
         width: 100%;
         height: 55px;
     }
-    
-    .input-field i{
-        line-height: 55px;
+
+    .input-icon {
+        padding-top: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .input-field input {
         font-size: 1.1rem;
     }
 
-    .input-field input{
-        font-size: 1.1rem;
-    }
-    
-    .redir{
+    .redir {
         font-size: 1rem;
         margin: 1.5rem 0 1.5rem 0;
     }
-    
-    .btn-login{
+
+    .button-login {
         width: 8rem;
         height: 3rem;
         cursor: pointer;
         font-size: 1.2rem;
     }
 
-    .button-icon{
+    .button-icon {
         font-size: 1.2rem;
+        padding-top: .3rem;
     }
-    
+
     .panel-container {
         align-items: unset;
         text-align: unset;
     }
-    
-    .panel-container h3{
+
+    .panel-container h3 {
         font-size: 1.5rem;
     }
 
-    .panel-container p{
+    .panel-container p {
         font-size: .95rem;
         padding: .7rem 0;
     }
