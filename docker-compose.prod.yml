@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.prod
+    volumes:
+      - ./:/var/www
+    depends_on:
+      - postgres
+    ports:
+      - "8989:80"
+    networks:
+      - default
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: "election"
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data_dev:/var/lib/postgresql/data
+    networks:
+      - default
+
+  # redis
+  redis:
+    image: redis:latest
+    restart: unless-stopped
+    networks:
+      - default
+
+networks:
+  default:
+
+
+volumes:
+  pg_data_dev:
