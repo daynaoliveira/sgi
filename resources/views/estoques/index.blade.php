@@ -21,11 +21,6 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="float-right">
-                                    <input type="search" class="form-control" placeholder="Pesquisar">
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="card-body">

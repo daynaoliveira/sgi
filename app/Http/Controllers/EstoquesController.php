@@ -39,7 +39,7 @@ class EstoquesController extends Controller
     public function select_vaccine(){
         $title = 'Selecionar vacina';
 
-        $vac = Vacinas::all();
+        $vac = Vacinas::paginate(10);
 
         return view('estoques.select_vaccine', [
             'title' => $title
@@ -82,7 +82,7 @@ class EstoquesController extends Controller
 
         try {
             $stock->save();
-            
+
             Alert::success('Estoque Cadastrado!');
             return redirect()->route('estoques.listar');
         } catch (Exception $e) {

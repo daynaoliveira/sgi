@@ -103,19 +103,24 @@ class CarteirasVacinacoesController extends Controller
             $vacinacao->data_proxima_dose = Carbon::now()->addDays($vacina->tempo_espera_dose)->format('Y-m-d');
         }
 
-        try {
-            $vacinacao->save();
+        if($estoque->quantidade <= 0){
+            Alert::error('Falha no procedimento!', 'Nao há mais vacinas neste lote.');
+        }
+        else{
+            try {
+                $vacinacao->save();
 
-            $qtd = $estoque->quantidade - 1;
-    
-            $estoque->fill([
-                'quantidade'    => $qtd,
-                'updated_at'    => Carbon::now()
-            ])->save();
+                $qtd = $estoque->quantidade - 1;
 
-            Alert::success('Paciente Vacinado!', 'O(A) paciente ' . $paciente->nome . ' foi vacinado(a).');
-        } catch(Exception $e) {
-            Alert::error('Paciente Não Vacinado!', 'O(A) paciente ' . $paciente->nome . ' não foi vacinado(a).');
+                $estoque->fill([
+                    'quantidade'    => $qtd,
+                    'updated_at'    => Carbon::now()
+                ])->save();
+
+                Alert::success('Paciente Vacinado!', 'O(A) paciente ' . $paciente->nome . ' foi vacinado(a).');
+            } catch(Exception $e) {
+                Alert::error('Paciente Não Vacinado!', 'O(A) paciente ' . $paciente->nome . ' não foi vacinado(a).');
+            }
         }
 
         return view('vacinacao.create', [

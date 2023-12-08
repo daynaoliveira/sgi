@@ -63,7 +63,7 @@ class ColaboradoresController extends Controller
         $user->nivel_acesso     = $request->acesso;
         $user->name             = $request->nome;
         $user->email            = $request->email;
-        $user->password         = Hash::make('SgI@2023');
+        $user->password         = Hash::make('12345678');
 
         try {
             $colab->save();
@@ -128,19 +128,19 @@ class ColaboradoresController extends Controller
                 'nome'                => $request->nome,
                 'cpf'                 => $request->cpf
             ])->save();
-    
+
             $user = User::where('id_colaborador', $colaborador->id)->first();
-    
+
             $user->fill([
                 'nivel_acesso'  => $request->nivel_acesso,
                 'name'          => $request->nome,
                 'email'         => $request->email
             ])->save();
-    
+
             Alert::success('Colaborador(a) Atualizado(a)!', 'O(A) colaborador(a) ' . $request->nome . ' foi atualizado(a).');
             return redirect()->route('colaboradores.listar');
         } catch (Exception $e) {
-            
+
             Alert::success('Colaborador(a) Não Atualizado(a)!', 'O(A) colaborador(a) ' . $request->nome . ' não foi atualizado(a).');
             return redirect()->route('colaboradores.editar_colaborador');
         }
@@ -155,7 +155,7 @@ class ColaboradoresController extends Controller
         try {
             $colaborador->usuarios()->delete();
             $colaborador->delete();
-            
+
             Alert::success('Colaborador(a) Deletado(a)!', 'O(A) colaborador(a) ' . $colaborador->nome . ' foi deletado(a).');
         } catch (Exception $e) {
             Alert::success('Colaborador(a) Não Deletado(a)!', 'O(A) colaborador(a) ' . $colaborador->nome . ' não foi deletado(a).');

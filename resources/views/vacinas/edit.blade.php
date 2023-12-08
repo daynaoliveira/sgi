@@ -59,7 +59,7 @@
                         </div>
                         <div class="card-footer">
                             <a href="{{ url()->previous() }}" class="btn btn-info float-left">Voltar</a>
-                            <button type="submit" class="btn btn-success float-right">Cadastrar</button>
+                            <button type="submit" class="btn btn-success float-right">Salvar</button>
                         </div>
                     </form>
                 </div>

@@ -18,11 +18,6 @@
                                     <a href="{{ route('estoques.listar') }}" class="btn btn-info float-left">Voltar</a>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-6">
-                                <div class="float-right">
-                                    <input type="search" class="form-control" placeholder="Pesquisar">
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -36,8 +31,8 @@
                                                 <th class="sorting sorting_asc" tabindex="0" aria-sort="ascending">#</th>
                                                 <th class="sorting sorting_asc" tabindex="0" aria-sort="ascending">Vacina</th>
                                                 <th class="sorting sorting_asc" tabindex="0" aria-sort="ascending">Descrição</th>
-                                                <th class="sorting sorting_asc" tabindex="0" aria-sort="ascending">Idade mínima | Idade máxima</th>
-                                                <th class="sorting sorting_asc" tabindex="0" aria-sort="ascending">Doses | Tempo de espera entre doses</th>
+                                                <th class="sorting sorting_asc" tabindex="0" aria-sort="ascending">Idade mínima | Idade máxima (em meses)</th>
+                                                <th class="sorting sorting_asc" tabindex="0" aria-sort="ascending">Doses | Tempo de espera entre doses (em dias)</th>
                                                 <th class="sorting sorting_asc" tabindex="0" aria-sort="ascending">Adicionar</th>
                                             </tr>
                                         </thead>
@@ -79,28 +74,7 @@
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-sm-12">
-                                <span class="" id="example1_info" role="status" aria-live="polite">
-                                    Mostrando 10 de 10 resultados
-                                </span>
-                                <div class="btn-group float-right">
-                                    <div class="col-sm-12 col-md-4">
-                                        <ul class="pagination pagination-sm float-right">
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">
-                                                    <i class="fa-solid fa-angle-left"></i>
-                                                </a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">1</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">
-                                                    <i class="fa-solid fa-angle-right"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                {{ $vacinas->links() }}
                             </div>
                         </div>
                     </div>

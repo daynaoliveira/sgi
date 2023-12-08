@@ -25,6 +25,6 @@ class Colaboradores extends Model
     }
 
     public function usuarios(){
-        return $this->hasMany(User::class);
+        return $this->hasMany(User::class, 'id_colaborador');
     }
 }

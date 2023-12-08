@@ -57,10 +57,10 @@ class UnidadesSaudeController extends Controller
         try {
             $us->save();
 
-            Alert::success('Unidade Cadastrada!', 'Unidade ' . $us->nome_unidade_saude . ' cadastrada com sucesso.');
+            Alert::success('Unidade cadastrada!', $us->nome_unidade_saude . ' cadastrada com sucesso.');
             return redirect()->route('unidades.listar');
         } catch (Exception $e) {
-            Alert::error('Unidade Não Cadastrada!', 'Unidade ' . $us->nome_unidade_saude . ' não foi cadastrada.');
+            Alert::error('Unidade não cadastrada!', $us->nome_unidade_saude . ' não foi cadastrada.');
 
             return redirect()->route('unidades.cadastrar_unidade');
         }
@@ -133,11 +133,11 @@ class UnidadesSaudeController extends Controller
                 'cep'                   =>  Str::replace('-', '', $request->cep),
                 'numero'                => $request->numero
             ])->save();
-            
-            Alert::success('Unidade Atualizada!', 'A Unidade ' . $request->nome . ' foi atualizada.');
+
+            Alert::success('Unidade atualizada!', $request->nome . ' foi atualizada.');
             return redirect()->route('unidades.listar');
         } catch (Exception $e) {
-            Alert::error('Unidade Não Atualizada!', 'A Unidade ' . $request->nome . ' não foi atualizada.');
+            Alert::error('Unidade não atualizada!', $request->nome . ' não foi atualizada.');
             return redirect()->route('unidades.editar_unidade');
         }
     }
@@ -151,9 +151,9 @@ class UnidadesSaudeController extends Controller
         try {
             $unidade->delete();
 
-            Alert::success('Unidade Deletada!', 'A unidade ' . $unidade->nome_unidade_saude . ' foi deletada.');
+            Alert::success('Unidade deletada!', $unidade->nome_unidade_saude . ' foi deletada.');
         } catch (Exception $e) {
-            Alert::error('Unidade Não Deletada!', 'A unidade ' . $unidade->nome_unidade_saude . ' não foi deletada.');
+            Alert::error('Unidade não deletada!', $unidade->nome_unidade_saude . ' não foi deletada.');
         }
 
         return redirect()->route('unidades.listar');

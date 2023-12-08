@@ -57,11 +57,11 @@ class VacinasController extends Controller
         try {
             $vac->save();
 
-            Alert::success('Vacina cadastrada!', 'A vacina ' . $vac->vacina . ' foi cadastrada com sucesso!');
+            Alert::success('Vacina cadastrada!', $vac->vacina . ' foi cadastrada com sucesso!');
 
             return redirect()->route('vacinas.listar');
         } catch (Exception $e) {
-            Alert::error('Vacina Não Cadastrada!', 'A vacina ' . $vac->vacina . ' não foi cadastrada!');
+            Alert::error('Vacina não cadastrada!', $vac->vacina . ' não foi cadastrada!');
 
             return redirect()->route('vacinas.cadastrar_vacina');
         }
@@ -118,12 +118,12 @@ class VacinasController extends Controller
                 'qtd_dose'          => $request->qtd_dose,
                 'tempo_espera_dose' => $request->tempo_espera_dose
             ])->save();
-    
-            Alert::success('Vacina Atualizada!', 'A vacina ' . $request->vacina . ' foi atualizada com sucesso!');
+
+            Alert::success('Vacina atualizada!', $request->vacina . ' foi atualizada com sucesso!');
 
             return redirect()->route('vacinas.listar');
         } catch (Exception $e) {
-            Alert::error('Vacina Não Atualizada!', 'A vacina ' . $request->vacina . ' não foi atualizada!');
+            Alert::error('Vacina não atualizada!', $request->vacina . ' não foi atualizada!');
             return redirect()->route('vacinas.editar_vacina');
         }
     }
@@ -136,9 +136,9 @@ class VacinasController extends Controller
         try {
             $vacina->delete();
 
-            Alert::success('Vacina Excluida!', 'A vacina ' . $vacina->vacina . ' foi deletada!');
+            Alert::success('Vacina deletada!', $vacina->vacina . ' foi deletada!');
         } catch (Exception $e) {
-            Alert::error('Vacina Não Excluida!', 'A vacina ' . $vacina->vacina . ' não foi deletada!');
+            Alert::error('Vacina não deletada!', $vacina->vacina . ' não foi deletada!');
         }
 
         return redirect()->route('vacinas.listar');

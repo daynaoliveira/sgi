@@ -21,11 +21,6 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="float-right">
-                                    <input type="search" class="form-control" placeholder="Pesquisar">
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -62,13 +57,6 @@
                                                                     <i class="fa-regular fa-pen-to-square text-info"></i>
                                                                 </a>
                                                             </button>
-                                                            <form action="{{route('colaboradores.deletar', $colaborador)}}" method="post">
-                                                                @method('DELETE')
-                                                                @csrf
-                                                                <button type="submit" class="btn">
-                                                                    <i class="fa-regular fa-trash-can text-danger"></i>
-                                                                </button>
-                                                            </form>
                                                         </div>
                                                     </td>
                                                 </tr>
